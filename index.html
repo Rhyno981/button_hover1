@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Test 2</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            width:100%;
+            height:100vh;
+            background-color: black;
+            font-family: sans-serif;
+            position:relative;
+        }
+        .button-container{
+            width:500px;
+            height:100px;
+            position:absolute;
+            top:25%;
+            left:25%;
+            color:#fff;
+            text-shadow: #000;
+            transform:translateX(-50%);
+            transform:translateY(-50%);
+        }
+        .button{
+            font-size: 40px;
+            font-weight: bold;
+            text-align:center;
+            line-height: 100px;
+            position:absolute;
+            width:100%;
+            height:100%;
+            color:#fff;
+            text-shadow:5px 5px 4px red;
+            border-style:solid;
+            border-radius:100px;
+            transition:all;
+            transition-duration: .5s;
+            box-shadow: rgba(255, 0, 0, 0.4) 5px 5px, rgba(255, 0, 0, 0.3) 10px 10px, rgba(255, 0, 0, 0.2) 15px 15px;
+            overflow:hidden;
+            z-index: 1;
+            
+
+        }
+        
+        .button::before{
+            position:absolute;
+            width:100%;
+            height:100%;
+            content:" ";
+            top:0;
+            transform:skew(20deg);
+            z-index: -1;
+            left:-110%;
+            background-color:red;
+            transition: all;
+            transition-duration: .5s;
+
+
+
+        }
+        .button::after{
+            position:absolute;
+            width:100%;
+            height:100%;
+            content:" ";
+            top:0;
+            transform:skew(20deg);
+            z-index: -1;
+            right:-110%;
+            background-color:teal;
+            transition: all;
+            transition-duration: .5s;
+            
+        }
+        .button:hover::before{
+            left:-50%;
+        }
+        .button:hover::after{
+            right:-50%;
+        }
+        .button:hover{
+            text-shadow:5px 5px 4px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <div class="button"> CLICK ME!</div>
+    </div>
+</body>
+</html>
